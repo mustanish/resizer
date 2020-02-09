@@ -133,7 +133,7 @@
 		 * @return void
 		 */
 		private function resizeImage(int $current) {
-			$this->saveDir = __DIR__.'/'.$this->destinationFolder.'/original/';
+			$this->saveDir = __DIR__.'/../'.$this->destinationFolder.'/original/';
 
 			//do not resize if image is smaller than max size
 			if($this->originalWidth <= $this->maxSize || $this->originalHeight <= $this->maxSize) {	
@@ -161,7 +161,7 @@
 			for ($i = 0; $i < count($this->thumbnailSize); $i++) { 
 				$this->newWidth = $this->thumbnailSize[$i];
 				$this->newHeight = $this->thumbnailSize[$i];
-				$this->saveDir = __DIR__.'/'.$this->destinationFolder.'/'.$this->thumbnailName[$i].'/';	
+				$this->saveDir = __DIR__.'/../'.$this->destinationFolder.'/'.$this->thumbnailName[$i].'/';	
 				
 				if($this->resampleImage()) {
 					$this->response[$current][$this->thumbnailName[$i]] = $this->saveImage();
